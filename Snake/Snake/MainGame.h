@@ -16,7 +16,10 @@ private:
 	void loadMap(const std::string& fileName, Snake& snake);
 	void gameLoop();
 	void print();
-	void handleInput(char input, Snake& snake);
+	void inputPhase(Snake& snake);
+	void processInput(Snake& snake, int targetX, int targetY);
+	char getTile(int x, int y) { return _mapData[y][x]; }
+	void setTile(int x, int y, char newTile) { _mapData[y][x] = newTile; }
 
 	std::vector <std::string> _mapData;
 	Snake _snake;
